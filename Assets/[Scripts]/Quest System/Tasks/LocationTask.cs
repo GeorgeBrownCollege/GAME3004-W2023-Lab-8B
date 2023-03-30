@@ -17,6 +17,6 @@ public class LocationTask : Task
 
     public override bool Condition()
     {
-        return Vector3.Distance(target.transform.position, location.position) < 0.5f;
+        return Vector3.Distance(target.transform.position, location.position) < 2.0f;
     }
 }

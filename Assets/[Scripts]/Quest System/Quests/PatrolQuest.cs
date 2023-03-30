@@ -3,25 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public sealed class PatrolQuest : Quest
+public class PatrolQuest : Quest
 {
+    [Header("Patrol Quest Properties")]
     public GameObject target;
     public Transform startLocation;
     public List<Transform> checkPoints;
 
-    public PatrolQuest(string id, string name, LocationTask rootTask, ProgressState state = ProgressState.NOT_STARTED) 
+    public PatrolQuest(string id, string name, LocationTask rootTask, List<Transform> patrolPath, ProgressState state = ProgressState.NOT_STARTED) 
         : base(id, name, rootTask, state)
     {
         target = rootTask.target;
         startLocation = rootTask.location;
-
-        BuildQuest();
+        checkPoints = patrolPath;
     }
 
     public override void BuildQuest()
     {
-        checkPoints = new List<Transform>();
-
         // add as many location tasks as there are transforms
         for (int i = 0; i < checkPoints.Count; i++)
         {
