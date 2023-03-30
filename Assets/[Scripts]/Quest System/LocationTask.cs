@@ -7,7 +7,7 @@ public class LocationTask : Task
     public GameObject target;
     public Transform location;
 
-    public LocationTask(string id, string name, Task prevTask, Task nextTask, GameObject taskTarget, Transform taskLocation, TaskState state = TaskState.NOT_STARTED) 
+    public LocationTask(string id, string name, Task prevTask, Task nextTask, GameObject taskTarget, Transform taskLocation, ProgressState state = ProgressState.NOT_STARTED) 
         : base(id, name, prevTask, nextTask, state)
     {
         this.target = taskTarget;

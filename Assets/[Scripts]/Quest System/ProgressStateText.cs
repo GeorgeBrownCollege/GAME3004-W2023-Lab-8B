@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct TaskStateText
+public struct ProgressStateText
 {
     public string abandoned;
     public string completed;

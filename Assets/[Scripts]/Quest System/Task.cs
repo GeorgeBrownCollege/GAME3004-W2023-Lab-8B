@@ -10,10 +10,10 @@ public class Task
     public string name;
     public Task prevTask;
     public Task nextTask;
-    public TaskState state;
-    public TaskStateText text;
+    public ProgressState state;
+    public ProgressStateText text;
 
-    public Task(string id, string name, Task prevTask, Task nextTask, TaskState state = TaskState.NOT_STARTED)
+    public Task(string id, string name, Task prevTask, Task nextTask, ProgressState state = ProgressState.NOT_STARTED)
     {
         this.id = id;
         this.name = name;
@@ -22,9 +22,9 @@ public class Task
         this.state = state;
 
         // if this task has a previous as a dependency then this task is INVALID and can't be started
-        if ((prevTask != null) && (prevTask.state != TaskState.COMPLETED))
+        if ((prevTask != null) && (prevTask.state != ProgressState.COMPLETED))
         {
-            this.state = TaskState.INVALID;
+            this.state = ProgressState.INVALID;
         }
     }
 
