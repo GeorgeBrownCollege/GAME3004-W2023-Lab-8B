@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Task
 {
+    [Header("Task Properties")]
     public string id;
     public string name;
     public Task prevTask;
